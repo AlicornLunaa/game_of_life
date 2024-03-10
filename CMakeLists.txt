@@ -40,9 +40,3 @@ if(WIN32)
         target_link_options(${PROJECT_NAME} PRIVATE "-mwindows")
     endif()
 endif()
-
-add_custom_command(
-    TARGET ${PROJECT_NAME}
-    COMMENT "Copy Assets"
-    POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_SOURCE_DIR}/assets $<TARGET_FILE_DIR:${PROJECT_NAME}>/assets
-    VERBATIM)
